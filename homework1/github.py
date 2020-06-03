@@ -14,7 +14,7 @@ headers = {
 
 for username in usernames:
     url_address = f'https://api.github.com/users/{username}/repos'
-    response = requests.get(url_address, params=params)
+    response = requests.get(url_address, params=params, headers=headers)
 
     with open(f'{username}.json', 'w') as f:
         f.write(response.text)

@@ -1,0 +1,211 @@
+{
+    "count": 184,
+    "next": "http://freesound.org/apiv2/search/text/?&query=goose&page=2",
+    "results": [
+        {
+            "id": 515408,
+            "name": "Duck Quack - Sound Effect (HD).mp3",
+            "tags": [
+                "Goose",
+                "goose",
+                "field-recording",
+                "honk",
+                "duck"
+            ],
+            "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+            "username": "Tabby+Gus."
+        },
+        {
+            "id": 519646,
+            "name": "goose calling.WAV",
+            "tags": [
+                "goose",
+                "nature",
+                "call",
+                "bird",
+                "birds"
+            ],
+            "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+            "username": "cupido-1"
+        },
+        {
+            "id": 160686,
+            "name": "A squeaking goose",
+            "tags": [
+                "geese",
+                "farm",
+                "honk",
+                "horn",
+                "goose",
+                "squeak",
+                "squak",
+                "bird"
+            ],
+            "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+            "username": "antique98"
+        },
+        {
+            "id": 474945,
+            "name": "Goose 1.wav",
+            "tags": [
+                "Goose",
+                "Sound",
+                "Korea"
+            ],
+            "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+            "username": "sarena6487528"
+        },
+        {
+            "id": 474952,
+            "name": "Goose 2.wav",
+            "tags": [
+                "Goose",
+                "Sound",
+                "Korea"
+            ],
+            "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+            "username": "sarena6487528"
+        },
+        {
+            "id": 466128,
+            "name": "Goose traveling somewhere 03/11/2019",
+            "tags": [
+                "Goose",
+                "farm",
+                "heading-north"
+            ],
+            "license": "http://creativecommons.org/licenses/by/3.0/",
+            "username": "PianoFarm"
+        },
+        {
+            "id": 516771,
+            "name": "Funky Goose.wav",
+            "tags": [
+                "goose",
+                "funky",
+                "aggressive"
+            ],
+            "license": "http://creativecommons.org/licenses/by/3.0/",
+            "username": "_tyler7687"
+        },
+        {
+            "id": 69046,
+            "name": "frogs and goose.mp3",
+            "tags": [
+                "frogs",
+                "geese",
+                "goose",
+                "lake",
+                "nature",
+                "pond",
+                "tree"
+            ],
+            "license": "http://creativecommons.org/licenses/by/3.0/",
+            "username": "IFartInUrGeneralDirection"
+        },
+        {
+            "id": 137764,
+            "name": "goose.aiff",
+            "tags": [
+                "goose",
+                "porto",
+                "ulp-cam",
+                "parque-da-cidade",
+                "Oporto"
+            ],
+            "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+            "username": "helupema"
+        },
+        {
+            "id": 516768,
+            "name": "(Raw) Goose.wav",
+            "tags": [
+                "goose",
+                "raw",
+                "nature",
+                "field-recording",
+                "birds"
+            ],
+            "license": "http://creativecommons.org/licenses/by/3.0/",
+            "username": "_tyler7687"
+        },
+        {
+            "id": 516772,
+            "name": "Clean Goose.wav",
+            "tags": [
+                "goose",
+                "field-recording",
+                "birds",
+                "clean",
+                "nature"
+            ],
+            "license": "http://creativecommons.org/licenses/by/3.0/",
+            "username": "_tyler7687"
+        },
+        {
+            "id": 47707,
+            "name": "goose-flyby.wav",
+            "tags": [
+                "birds",
+                "field-recording",
+                "flyby",
+                "geese",
+                "goose",
+                "sonography"
+            ],
+            "license": "http://creativecommons.org/licenses/by-nc/3.0/",
+            "username": "klankschap"
+        },
+        {
+            "id": 451545,
+            "name": "sweden-forrest-goose-screaming",
+            "tags": [
+                "geese",
+                "nature",
+                "mono",
+                "flying",
+                "goose",
+                "Sweden",
+                "birds"
+            ],
+            "license": "http://creativecommons.org/licenses/by/3.0/",
+            "username": "Eelke"
+        },
+        {
+            "id": 111083,
+            "name": "spur_winged_goose.wav",
+            "tags": [
+                "aviary",
+                "bird",
+                "birds",
+                "chirp",
+                "exotic",
+                "field-recording",
+                "goose",
+                "tropical",
+                "zoo"
+            ],
+            "license": "http://creativecommons.org/licenses/by/3.0/",
+            "username": "soundbytez"
+        },
+        {
+            "id": 52344,
+            "name": "Rusty Metal Squeak goose.wav",
+            "tags": [
+                "goose",
+                "handle",
+                "high",
+                "latch",
+                "lock",
+                "metal",
+                "rusty",
+                "scream",
+                "squeak",
+                "squeaky"
+            ],
+            "license": "http://creativecommons.org/licenses/by/3.0/",
+            "username": "Angel_Perez_Grandi"
+        }
+    ],
+    "previous": null
+}

@@ -1,43 +1,87 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.action_chains import ActionChains
 import time
+from db import save_mails_to_db
 
-driver = webdriver.Chrome('./chromedriver')
+driver = webdriver.Chrome()
+driver.get('https://mail.ru/')
 
-driver.get('https://geekbrains.ru/login')
+assert "Mail.ru" in driver.title
 
-assert "GeekBrains" in driver.title
+def login():
+    try:
+        elem = driver.find_element_by_id('mailbox:login')
+        elem.send_keys('study.ai_172@mail.ru')
+        elem.send_keys(Keys.RETURN)
+        time.sleep(1)
+        elem = driver.find_element_by_id('mailbox:password')
+        elem.send_keys('NextPassword172')
+        elem.send_keys(Keys.RETURN)
+        time.sleep(5)
 
-elem = driver.find_element_by_id('user_email')
-elem.send_keys('study.ai_172@mail.ru')
+        return True
+    except:
+        return False
 
+def load_articles_by_scroll():
+    last_element = None
+    while True:
+        time.sleep(1)
+        articles = driver.find_elements_by_class_name('llc')
+        actions = ActionChains(driver)
+        if last_element != articles[-1]:
+            last_element = articles[-1]
+            actions.move_to_element(last_element)
+            actions.perform()
+        else:
+            break
 
-elem = driver.find_element_by_id('user_password')
-elem.send_keys('Password172')
+def get_title_from_mail_node(node):
+    title_span_node = node.find_elements_by_xpath('.//span[@class="ll-crpt"]')[0]
+    return title_span_node.get_attribute('title')
 
+def get_subject_from_mail_node(node):
+    subject_node = node.find_elements_by_xpath('.//span[@class="ll-sj__normal"]')[0]
+    return subject_node.text
 
-elem.send_keys(Keys.RETURN)
-time.sleep(5)
-profile = driver.find_element_by_class_name('avatar')
+def get_datetime_from_mail_node(node):
+    date_node = node.find_elements_by_xpath('.//div[@class="llc__item llc__item_date"]')[0]
+    return date_node.get_attribute('title')
 
-driver.get(profile.get_attribute('href'))
+def get_data_from_mails(mails):
+    result_mails = []
+    for mail in mails:
+        mail = {
+            'href': mail.get_attribute('href'),
+            'title': get_title_from_mail_node(mail),
+            'datetime': get_datetime_from_mail_node(mail),
+            'content': None
+        }
+        result_mails.append(mail)
 
-edit_profile = driver.find_element_by_class_name('text-sm')
-driver.get(edit_profile.get_attribute('href'))
+    return result_mails
 
-gender = driver.find_element_by_name('user[gender]')
-# options = gender.find_elements_by_tag_name('option')
-#
-# for option in options:
-#     if option.text == 'РњСѓР¶СЃРєРѕР№':
-#         option.click()
+login()
+load_articles_by_scroll()
 
-select = Select(gender)
-select.select_by_value('2')
+mail_nodes = driver.find_elements_by_xpath("//a[@class='llc js-tooltip-direction_letter-bottom js-letter-list-item llc_pony-mode llc_normal']")
+result_info = get_data_from_mails(mail_nodes)
 
-gender.submit()
+for mail in result_info:
+    if mail['href'] is not None:
+        try:
+            driver.get(mail['href'])
+            time.sleep(2)
+            body = driver.find_elements_by_xpath('//div[@class="letter__body"]')[0]
+            mail['content'] = body.text
+            del(mail['href'])
+            driver.back()
+            time.sleep(1)
+        except:
+            pass
 
-driver.back()
-driver.forward()
-driver.refresh()
+save_mails_to_db(result_info)

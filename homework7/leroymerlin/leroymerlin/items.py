@@ -3,10 +3,13 @@
 # See documentation in:
 # https://docs.scrapy.org/en/latest/topics/items.html
 
+from scrapy.loader.processors import TakeFirst, MapCompose
 import scrapy
 
-
 class LeroymerlinItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    _id = scrapy.Field()
+    name = scrapy.Field(output_processor=TakeFirst())
+    photos = scrapy.Field()
+    parameters = scrapy.Field()
+    link = scrapy.Field()
+    price = scrapy.Field(output_processor=TakeFirst())

@@ -9,6 +9,9 @@ class LmSpider(scrapy.Spider):
     # Стартовая ссылка (точка входа)
     start_urls = ['https://leroymerlin.ru/search/?q=%D0%B4%D0%B8%D0%B2%D0%B0%D0%BD&suggest=true']
 
+    def __init__(self, search):
+        start_urls = [f'https://leroymerlin.ru/search/?q={param}&suggest=true' for param in search]
+
     def parse(self, response):
         # Ищем ссылку для перехода на следующую страницу
         next_page = response.css('a.paginator-button.next-paginator-button::attr(href)').extract_first()

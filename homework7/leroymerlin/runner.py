@@ -10,6 +10,6 @@ if __name__ == '__main__':
     crawler_settings.setmodule(settings)            # Привязываем к нашим настройкам
 
     process = CrawlerProcess(settings=crawler_settings)     # Создаем объект процесса для работы
-    process.crawl(LmSpider)                # Добавляем нашего паука
+    process.crawl(LmSpider, search=['Диван', 'Кровать'])                # Добавляем нашего паука
 
     process.start()                                         # Пуск

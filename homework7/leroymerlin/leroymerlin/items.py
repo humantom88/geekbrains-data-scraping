@@ -5,6 +5,11 @@
 
 from scrapy.loader.processors import TakeFirst, MapCompose
 import scrapy
+import re
+
+def cleaner_price(value):
+    price_string = re.sub('[^\d]', '', value)
+    return int(price_string)
 
 class LeroymerlinItem(scrapy.Item):
     _id = scrapy.Field()
@@ -12,4 +17,4 @@ class LeroymerlinItem(scrapy.Item):
     photos = scrapy.Field()
     parameters = scrapy.Field()
     link = scrapy.Field()
-    price = scrapy.Field(output_processor=TakeFirst())
+    price = scrapy.Field(input_processor=TakeFirst(), output_processor=MapCompose(cleaner_price))
